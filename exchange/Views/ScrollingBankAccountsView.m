@@ -100,12 +100,6 @@
     [_delegate scrollingBankAccountsViewDidChangeAccount:self];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (!scrollView.isDragging && !scrollView.isDecelerating) {
-        [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, -scrollView.contentInset.top) animated:NO];
-    }
-}
-
 #pragma mark - BankAccountViewDelegate
 - (void)bankAccountView:(BankAccountView *)bankAccountView
       didChangeAmountTo:(NSDecimalNumber *)amount {
