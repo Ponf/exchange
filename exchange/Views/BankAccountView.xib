@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BankAccountView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QN2-As-ZaZ">
+                    <rect key="frame" x="0.0" y="0.0" width="160" height="165"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GBP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LW5-tt-oL8">
+                            <rect key="frame" x="30" y="53.5" width="60.5" height="38.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="32"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have $104" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl7-wE-yxc">
+                            <rect key="frame" x="30" y="100" width="111.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="LW5-tt-oL8" firstAttribute="centerY" secondItem="QN2-As-ZaZ" secondAttribute="centerY" constant="-10" id="62d-UN-8xO"/>
+                        <constraint firstItem="LW5-tt-oL8" firstAttribute="centerX" secondItem="QN2-As-ZaZ" secondAttribute="centerX" constant="-20" id="Rkn-qn-zz1"/>
+                        <constraint firstItem="tl7-wE-yxc" firstAttribute="leading" secondItem="LW5-tt-oL8" secondAttribute="leading" id="baw-Hq-ahp"/>
+                        <constraint firstItem="tl7-wE-yxc" firstAttribute="top" secondItem="LW5-tt-oL8" secondAttribute="bottom" constant="8" id="klP-kh-fRd"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGY-Lt-5Db">
+                    <rect key="frame" x="160" y="0.0" width="160" height="165"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="-744" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMX-Bg-R5k">
+                            <rect key="frame" x="10" y="53.5" width="120" height="39"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="x1A-pt-74K"/>
+                            </constraints>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="32"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                            <connections>
+                                <outlet property="delegate" destination="iN0-l3-epB" id="sA4-tn-Uzs"/>
+                            </connections>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1$ = 0,68" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1E-Za-bBC">
+                            <rect key="frame" x="57.5" y="100.5" width="72.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="DMX-Bg-R5k" firstAttribute="centerX" secondItem="VGY-Lt-5Db" secondAttribute="centerX" constant="-10" id="MWW-F4-U1K"/>
+                        <constraint firstItem="y1E-Za-bBC" firstAttribute="top" secondItem="DMX-Bg-R5k" secondAttribute="bottom" constant="8" id="ciE-wP-D7j"/>
+                        <constraint firstItem="y1E-Za-bBC" firstAttribute="trailing" secondItem="DMX-Bg-R5k" secondAttribute="trailing" id="i1U-7p-Lj3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="QN2-As-ZaZ" secondAttribute="bottom" id="2GH-q0-Tir"/>
+                <constraint firstItem="QN2-As-ZaZ" firstAttribute="width" secondItem="VGY-Lt-5Db" secondAttribute="width" id="9G6-cT-RQp"/>
+                <constraint firstAttribute="bottom" secondItem="VGY-Lt-5Db" secondAttribute="bottom" id="DF1-vC-ntX"/>
+                <constraint firstItem="QN2-As-ZaZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="INc-oD-Ngw"/>
+                <constraint firstItem="DMX-Bg-R5k" firstAttribute="centerY" secondItem="LW5-tt-oL8" secondAttribute="centerY" id="SrC-ky-Kuu"/>
+                <constraint firstItem="QN2-As-ZaZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="clF-qr-yh2"/>
+                <constraint firstAttribute="trailing" secondItem="VGY-Lt-5Db" secondAttribute="trailing" id="iPw-RR-pDu"/>
+                <constraint firstItem="VGY-Lt-5Db" firstAttribute="leading" secondItem="QN2-As-ZaZ" secondAttribute="trailing" id="lYi-hc-5Yy"/>
+                <constraint firstItem="VGY-Lt-5Db" firstAttribute="leading" secondItem="QN2-As-ZaZ" secondAttribute="trailing" id="qW8-sZ-5bo"/>
+                <constraint firstItem="VGY-Lt-5Db" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xeJ-rg-oJb"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="_currencyLabel" destination="LW5-tt-oL8" id="wgr-8N-g4k"/>
+                <outlet property="_currentAmountLabel" destination="tl7-wE-yxc" id="tb6-vi-e86"/>
+                <outlet property="_exchangeAmountField" destination="DMX-Bg-R5k" id="lcr-7v-bzN"/>
+                <outlet property="_exchangeRateLabel" destination="y1E-Za-bBC" id="4nG-nj-dcf"/>
+            </connections>
+            <point key="canvasLocation" x="302" y="188.5"/>
+        </view>
+    </objects>
+</document>

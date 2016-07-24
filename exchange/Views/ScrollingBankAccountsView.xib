@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ScrollingBankAccountsView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="152"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfO-El-x7b">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="152"/>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="YFA-iM-36W"/>
+                    </connections>
+                </scrollView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="GfW-Bz-dYy">
+                    <rect key="frame" x="141" y="104" width="39" height="37"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="lfO-El-x7b" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0gc-1H-NJ1"/>
+                <constraint firstItem="lfO-El-x7b" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2Pz-oc-g2P"/>
+                <constraint firstAttribute="bottom" secondItem="GfW-Bz-dYy" secondAttribute="bottom" constant="11" id="Jm5-4Z-tua"/>
+                <constraint firstAttribute="trailing" secondItem="lfO-El-x7b" secondAttribute="trailing" id="iIt-bb-Wku"/>
+                <constraint firstAttribute="bottom" secondItem="lfO-El-x7b" secondAttribute="bottom" id="sRB-Cf-uba"/>
+                <constraint firstItem="GfW-Bz-dYy" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vO4-nn-exU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="_pageControl" destination="GfW-Bz-dYy" id="i3L-Fw-cid"/>
+                <outlet property="_scrollView" destination="lfO-El-x7b" id="1P4-PN-KUM"/>
+            </connections>
+            <point key="canvasLocation" x="302" y="182"/>
+        </view>
+    </objects>
+</document>
