@@ -14,10 +14,16 @@
 - (NSAttributedString *)exc_beautifulAmountString {
     NSMutableAttributedString *resultAttributedString = [NSMutableAttributedString new];
     NSString *separatorString = [[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator];
-    NSString *signString = [self substringWithRange:NSMakeRange(0, 1)];
+    NSString *signString = nil;
+    NSRange signRange = [self rangeOfCharacterFromSet:[NSCharacterSet characterSetWithCharactersInString:@"+-"]];
+    if (signRange.location != NSNotFound) {
+        if (signRange.location > 0) {
+            return nil;
+        }
+        signString = [self substringWithRange:NSMakeRange(0, 1)];
+    }
 
-    NSArray *substrings = [[self substringFromIndex:1] componentsSeparatedByString:separatorString];
-    NSCAssert((substrings.count > 0 && substrings.count < 3), @"Wrong input amount: too much decimal separators");
+    NSArray *substrings = [[self substringFromIndex:signString != nil ? 1 : 0] componentsSeparatedByString:separatorString];
     if (!(substrings.count > 0 && substrings.count < 3)) {
         return nil;
     }
@@ -39,7 +45,9 @@
         UIFont *largeFont = [UIFont systemFontOfSize:32 weight:UIFontWeightLight];
         NSDictionary *largeFontStyles = @{NSFontAttributeName : largeFont,
                                           NSForegroundColorAttributeName : [UIColor whiteColor]};
-        integerPart = [signString stringByAppendingString:integerPart];
+        if (signString) {
+            integerPart = [signString stringByAppendingString:integerPart];
+        }
         if (decimalPart) {
             integerPart = [integerPart stringByAppendingString:separatorString];
         }

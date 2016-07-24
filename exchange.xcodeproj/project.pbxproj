@@ -24,7 +24,7 @@
 		C23FA1271D3FDAE8008406CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C23FA1261D3FDAE8008406CB /* AppDelegate.m */; };
 		C23FA12D1D3FDAE8008406CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23FA12B1D3FDAE8008406CB /* Main.storyboard */; };
 		C23FA12F1D3FDAE8008406CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C23FA12E1D3FDAE8008406CB /* Assets.xcassets */; };
-		C23FA13D1D3FDAE9008406CB /* exchangeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C23FA13C1D3FDAE9008406CB /* exchangeTests.m */; };
+		C23FA13D1D3FDAE9008406CB /* currencyFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C23FA13C1D3FDAE9008406CB /* currencyFormatterTests.m */; };
 		C28E3CD81D451609001C92D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28E3CD71D451609001C92D8 /* LaunchScreen.storyboard */; };
 		C2F7B0511D3FF05A00091083 /* BankAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2F7B0501D3FF05A00091083 /* BankAccountView.xib */; };
 		C2F7B0541D3FF44600091083 /* BankAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F7B0531D3FF44600091083 /* BankAccountView.m */; };
@@ -77,7 +77,7 @@
 		C23FA12E1D3FDAE8008406CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C23FA1331D3FDAE8008406CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C23FA1381D3FDAE9008406CB /* exchangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = exchangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C23FA13C1D3FDAE9008406CB /* exchangeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = exchangeTests.m; sourceTree = "<group>"; };
+		C23FA13C1D3FDAE9008406CB /* currencyFormatterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = currencyFormatterTests.m; sourceTree = "<group>"; };
 		C23FA13E1D3FDAE9008406CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C28E3CD71D451609001C92D8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2F7B0501D3FF05A00091083 /* BankAccountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankAccountView.xib; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 		C23FA13B1D3FDAE9008406CB /* exchangeTests */ = {
 			isa = PBXGroup;
 			children = (
-				C23FA13C1D3FDAE9008406CB /* exchangeTests.m */,
+				C23FA13C1D3FDAE9008406CB /* currencyFormatterTests.m */,
 				C23FA13E1D3FDAE9008406CB /* Info.plist */,
 			);
 			path = exchangeTests;
@@ -430,7 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C23FA13D1D3FDAE9008406CB /* exchangeTests.m in Sources */,
+				C23FA13D1D3FDAE9008406CB /* currencyFormatterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
