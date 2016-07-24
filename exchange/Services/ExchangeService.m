@@ -17,7 +17,11 @@
     if (self = [super init]) {
         _exchangeRates = @{@"EUR" : @"1.000", @"USD" : @"1.16", @"GBP" : @"0.81523"};
         _networkingService = [NetworkingService new];
-        [self updateExchangeRates:nil];
+        __weak typeof(self) wself = self;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            typeof(self) sself = wself;
+            [sself->_delegate exchangeServiceDidUpdateRates:sself];
+        });
         _updateTimer = [NSTimer scheduledTimerWithTimeInterval:10.0
                                                         target:self
                                                       selector:@selector(updateExchangeRates:)
