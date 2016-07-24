@@ -27,7 +27,7 @@
 #pragma mark - Override
 
 - (BOOL)becomeFirstResponder {
-//    [super becomeFirstResponder];
+    [super becomeFirstResponder];
     return [_exchangeAmountField becomeFirstResponder];
 }
 

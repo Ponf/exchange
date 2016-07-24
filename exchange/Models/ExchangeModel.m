@@ -20,7 +20,8 @@
     if (self = [super init]) {
         _account = account;
     }
-    _selectedToCurrency = _selectedFromCurrency = @"USD";
+    _selectedFromCurrency = @"USD";
+    _selectedToCurrency = @"EUR";
     return self;
 }
 

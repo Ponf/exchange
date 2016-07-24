@@ -29,7 +29,7 @@
 
     UIPageControl *pageControl = _pageControl;
     pageControl.numberOfPages = bankAccounts.count;
-    pageControl.currentPage = 0;
+    pageControl.currentPage = _viewType == BankAccountViewType_Withdraw ? 0 : 1;
     [self layoutBankAccountViews];
 }
 
