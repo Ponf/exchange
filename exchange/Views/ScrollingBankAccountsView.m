@@ -73,6 +73,7 @@
 }
 
 - (BOOL)becomeFirstResponder {
+    //Preventing UIScrollView from scrolling while setting focus to UITextField
     _scrollView.scrollEnabled = NO;
     [[self currentBankAccountView] becomeFirstResponder];
     _scrollView.scrollEnabled = YES;
@@ -98,6 +99,13 @@
         scrollView.contentOffset = CGPointMake(scrollView.frame.size.width, 0);
     }
     [_delegate scrollingBankAccountsViewDidChangeAccount:self];
+
+    //FIX: Setting focus in UITextField on next RunLoop cycle
+    __weak typeof(self) wself = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        typeof(self) sself = wself;
+        [sself becomeFirstResponder];
+    });
 }
 
 #pragma mark - BankAccountViewDelegate
