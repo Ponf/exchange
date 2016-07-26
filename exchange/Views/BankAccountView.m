@@ -74,6 +74,10 @@
     _exchangeRateLabel.attributedText = exchangeRate;
 }
 
+- (BOOL)isEditing {
+    return _exchangeAmountField.isFirstResponder;
+}
+
 #pragma mark - BankAccountDelegate
 - (void)bankAccountAmountDidChange:(BankAccount *)bankAccount {
     [self updateCurrentAmountLabel];

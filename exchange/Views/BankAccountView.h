@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, BankAccountViewType) {
 @property (nonatomic, readonly) NSString *currency;
 @property (nonatomic, readonly) NSDecimalNumber *amount;
 @property (nonatomic, readonly) BOOL enoughMoney;
-
+@property (nonatomic, readonly) BOOL isEditing;
 
 - (void)configureWithBankAccount:(BankAccount *)bankAccount;
 - (void)updateWithNewAmount:(NSDecimalNumber *)newAmount;

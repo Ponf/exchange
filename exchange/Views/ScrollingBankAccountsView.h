@@ -20,6 +20,7 @@
 @property (nonatomic, readonly) BankAccount *selectedBankAccount;
 @property (nonatomic, readonly) NSDecimalNumber *currentAmount;
 @property (nonatomic, readonly) BOOL selectedBankAccountHasEnoughMoney;
+@property (nonatomic, readonly) BOOL isEditing;
 
 - (void)configureWithBankAccounts:(NSArray<BankAccount *> *)bankAccounts;
 

@@ -23,6 +23,8 @@
     NSArray<BankAccountView *> *_bankAccountViews;
 }
 
+#pragma mark - Public
+
 - (void)configureWithBankAccounts:(NSArray<BankAccount *> *)bankAccounts {
     _bankAccounts = bankAccounts;
     [self prepareBankAccountViews];
@@ -64,8 +66,21 @@
 }
 
 - (BOOL)selectedBankAccountHasEnoughMoney {
+    //TODO: move to the model
     return [self currentBankAccountView].enoughMoney;
 }
+
+- (BOOL)isEditing {
+    __block BOOL hasFirstResponder = NO;
+    [_bankAccountViews enumerateObjectsUsingBlock:^(BankAccountView *accountView, NSUInteger idx, BOOL *stop) {
+        if (accountView.isEditing) {
+            hasFirstResponder = YES;
+        }
+    }];
+    return hasFirstResponder;
+}
+
+#pragma mark - Override
 
 - (void)layoutSubviews {
     [super layoutSubviews];

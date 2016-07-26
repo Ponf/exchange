@@ -92,9 +92,15 @@ canWithdrawMoneyFromSelectedAccount:(BOOL)canWithdrawMoney {
 #pragma mark - ExchangeModelDelegate
 
 - (void)exchangeModel:(ExchangeModel *)model didUpdateExchangeRates:(ExchangeService *)exchangeService {
-    [_depositScrollingView recalculateExchangeAndUpdateViewsForAmount:_withdrawScrollingView.currentAmount
-                                                           inCurrency:_withdrawScrollingView.selectedBankAccount.currencyName
-                                                      exchangeService:_model.exchangeService];
+    if (_depositScrollingView.isEditing) {
+        [_withdrawScrollingView recalculateExchangeAndUpdateViewsForAmount:_depositScrollingView.currentAmount
+                                                                inCurrency:_depositScrollingView.selectedBankAccount.currencyName
+                                                           exchangeService:_model.exchangeService];
+    } else {
+        [_depositScrollingView recalculateExchangeAndUpdateViewsForAmount:_withdrawScrollingView.currentAmount
+                                                               inCurrency:_withdrawScrollingView.selectedBankAccount.currencyName
+                                                          exchangeService:_model.exchangeService];
+    }
     [_depositScrollingView updateSmallExchangeRateWithCurrency:_withdrawScrollingView.selectedBankAccount.currencyName
                                                exchangeService:_model.exchangeService];
     [self updateExchangeLabel];
